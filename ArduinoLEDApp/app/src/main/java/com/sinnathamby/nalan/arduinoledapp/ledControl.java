@@ -52,15 +52,29 @@ public class ledControl extends AppCompatActivity {
 
         brightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            public void onProgressChanged(SeekBar seekBar, int brightnessProgress, boolean fromUser) {
+
                 if (fromUser == true) {
-                    lumn.setText(String.valueOf(progress));
+                    lumn.setText(String.valueOf(brightnessProgress));
                     try {
-                        btSocket.getOutputStream().write(String.valueOf(progress).getBytes());
+                        btSocket.getOutputStream().write(brightnessProgress);
+                        //btSocket.getOutputStream().write(String.valueOf(progress).getBytes());
                     } catch (IOException e) {
 
                     }
                 }
+
+
+                /*
+                brightnessProgress += minValue;
+                lumn.setText(String.valueOf(brightnessProgress));
+                try {
+                    btSocket.getOutputStream().write(brightnessProgress);
+                    //btSocket.getOutputStream().write(String.valueOf(progress).getBytes());
+                } catch (IOException e) {
+
+                }
+                */
             }
 
             @Override
@@ -70,6 +84,7 @@ public class ledControl extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
 
             }
         });
@@ -91,7 +106,8 @@ public class ledControl extends AppCompatActivity {
     private void turnOffLed() {
         if (btSocket != null) {
             try {
-                btSocket.getOutputStream().write("TF".toString().getBytes());
+                btSocket.getOutputStream().write(0);
+                //btSocket.getOutputStream().write("0".toString().getBytes());
             } catch (IOException e) {
                 msg("Error");
             }
@@ -101,7 +117,8 @@ public class ledControl extends AppCompatActivity {
     private void turnOnLed() {
         if (btSocket != null) {
             try {
-                btSocket.getOutputStream().write("TO".toString().getBytes());
+                btSocket.getOutputStream().write(1);
+                //btSocket.getOutputStream().write("1".toString().getBytes());
             } catch (IOException e) {
                 msg("Error");
             }
