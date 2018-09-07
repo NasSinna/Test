@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AdroidLabs</string>
+    <string name="hello_message">Bonjour</string>
+    <string name="ButtonText">Je suis un button</string>
+
+</resources>
