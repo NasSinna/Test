@@ -4,5 +4,9 @@
     <string name="app_name">AdroidLabs</string>
     <string name="hello_message">Bonjour</string>
     <string name="ButtonText">Je suis un button</string>
+    <string name="textUser">S\'identifier</string>
 
+    <string name="switch1">Qu\'est-ce que cela fait?</string>
+    <string name="radioButon">Bouton radio</string>
+    <string name="checkBox">Case à cocher</string>
 </resources>
