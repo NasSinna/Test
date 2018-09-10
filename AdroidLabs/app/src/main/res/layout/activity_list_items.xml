@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:gravity="fill"
-        android:text="@string/radioButon" />
+        android:text="@string/radioButton" />
 
     <CheckBox
         android:id="@+id/checkBox"
